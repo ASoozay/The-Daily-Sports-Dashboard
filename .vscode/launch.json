@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Portal",
+            "request": "launch",
+            "mainClass": "main.model.Portal",
+            "projectName": "Daily_Sports_Dashboard_ca72d261"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "env": {
+                "DB_URL": "jdbc:sqlite:C:\\Users\\pvaso\\OneDrive\\Desktop\\Daily_Sports_Dashboard\\sql\\daily_sports.db"
+            }
+        }
+    ]
+}

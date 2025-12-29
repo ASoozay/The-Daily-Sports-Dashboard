@@ -1,0 +1,33 @@
+CREATE TABLE Writer (
+	writer_id INT PRIMARY KEY,
+	editor BOOLEAN,
+	first_name VARCHAR(100),
+	last_name VARCHAR(100),
+	standing VARCHAR(100),
+	hire_date DATE,
+	email VARCHAR(100),
+	phone VARCHAR(100));
+
+
+CREATE TABLE Login (
+	writer_id INT REFERENCES Writer(writer_id),	
+	username VARCHAR(100),
+	password_hash BINARY(16));
+
+
+CREATE TABLE Game (
+	game_id INT PRIMARY KEY,	
+	sport VARCHAR(100),
+	home_team VARCHAR(100),
+	away_team VARCHAR(100),
+	credential VARCHAR(10),
+	city VARCHAR(100),
+	state VARCHAR(100),
+	time DATE,
+	notes VARCHAR(65535));
+
+CREATE TABLE Assignment (
+	assignment_id INT PRIMARY KEY,
+	writer_id INT REFERENCES Writer(writer_id),
+	game_id	INT REFERENCES Game(game_id),
+	credential_submitted VARCHAR(10));

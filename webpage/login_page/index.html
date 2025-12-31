@@ -8,11 +8,11 @@
 <head>
 <style>
     body {
-        background-image: url("250927_SeanFan_FBvOhioState_PreGame-84.jpg");
-        background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
         background-color: white;
+        transition: background-image 1s ease-in-out;
+        min-height: 100vh;
     }
 
     nav {
@@ -140,6 +140,34 @@
         <button type="submit"><b>LOGIN</b></button>
         <a href="https://www.dailyuw.com/">Forgot Password?</a>
     </div>
+
+    <script>
+        const images = [
+            'image1.webp',
+            'image2.webp',
+            'image3.webp',
+            'image4.webp',
+            'image5.webp',
+            'image6.webp',
+            'image7.webp'
+        ];
+
+        images.forEach((image) => {
+            const img = new Image();
+            img.src = image;
+            });
+            
+        let currentIndex = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000); // Change every 5 seconds
+        changeBackground(); // Initial call
+    </script>
 </body>
 
 </html> 
